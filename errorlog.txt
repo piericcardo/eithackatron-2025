@@ -1,0 +1,296 @@
+Console Error
+
+Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+See more info here: https://nextjs.org/docs/messages/react-hydration-error
+
+
+  ...
+    <RedirectErrorBoundary router={{...}}>
+      <InnerLayoutRouter url="/" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>
+        <ClientPageRoot Component={function WaterCompanyLanding} searchParams={{}} params={{}}>
+          <WaterCompanyLanding params={Promise} searchParams={Promise}>
+            <div className="flex flex-...">
+              <CursorWaterEffect>
+              <AnimatedComponent>
+              <main className="flex-1">
+                <section>
+                <section>
+                <section className="w-full py-...">
+                  <div className="container ...">
+                    <AnimatedComponent>
+                    <div className="relative m...">
+                      <AnimatedArrow direction="right" className="pointer-ev...">
+                        <div ref={{current:null}} className="hidden lg:...">
+                          <svg width="120" height="120" viewBox="0 0 120 120" className="text-blue-300">
+                            <defs>
+                              <linearGradient
++                               id="arrowGradient-right-obpe15rqu"
+-                               id="arrowGradient-right-hgiw81g3b"
+                                x1="0%"
+                                y1="0%"
+                                x2="100%"
+                                y2="0%"
+                              >
+                              <filter
++                               id="glow-arrowGradient-right-obpe15rqu"
+-                               id="glow-arrowGradient-right-hgiw81g3b"
+                                x="-50%"
+                                y="-50%"
+                                width="200%"
+                                height="200%"
+                              >
+                            <motion.path d="M20 60 Q40..." stroke="url(#arrow..." strokeWidth="4" fill="none" ...>
+                              <path
+                                d="M20 60 Q40 50, 60 60 T100 60"
++                               stroke="url(#arrowGradient-right-obpe15rqu)"
+-                               stroke="url(#arrowGradient-right-hgiw81g3b)"
+                                strokeWidth="4"
+                                fill="none"
+                                strokeLinecap="round"
++                               filter="url(#glow-arrowGradient-right-obpe15rqu)"
+-                               filter="url(#glow-arrowGradient-right-hgiw81g3b)"
+                                opacity={0}
+                                pathLength={1}
+                                strokeDashoffset="0px"
+                                strokeDasharray="0px 1px"
+                                style={{}}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.path d="M90 50 L10..." stroke="url(#arrow..." strokeWidth="4" fill="none" ...>
+                              <path
+                                d="M90 50 L105 60"
++                               stroke="url(#arrowGradient-right-obpe15rqu)"
+-                               stroke="url(#arrowGradient-right-hgiw81g3b)"
+                                strokeWidth="4"
+                                fill="none"
+                                strokeLinecap="round"
++                               filter="url(#glow-arrowGradient-right-obpe15rqu)"
+-                               filter="url(#glow-arrowGradient-right-hgiw81g3b)"
+                                opacity={0}
+                                pathLength={1}
+                                strokeDashoffset="0px"
+                                strokeDasharray="0px 1px"
+                                style={{}}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.path d="M90 70 L10..." stroke="url(#arrow..." strokeWidth="4" fill="none" ...>
+                              <path
+                                d="M90 70 L105 60"
++                               stroke="url(#arrowGradient-right-obpe15rqu)"
+-                               stroke="url(#arrowGradient-right-hgiw81g3b)"
+                                strokeWidth="4"
+                                fill="none"
+                                strokeLinecap="round"
++                               filter="url(#glow-arrowGradient-right-obpe15rqu)"
+-                               filter="url(#glow-arrowGradient-right-hgiw81g3b)"
+                                opacity={0}
+                                pathLength={1}
+                                strokeDashoffset="0px"
+                                strokeDasharray="0px 1px"
+                                style={{}}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            ...
+                      ...
+                    <div className="relative m...">
+                      <AnimatedArrow direction="left" className="pointer-ev...">
+                        <div ref={{current:null}} className="hidden lg:...">
+                          <svg width="120" height="120" viewBox="0 0 120 120" className="text-blue-300">
+                            <defs>
+                              <linearGradient
++                               id="arrowGradient-left-ijoigt7x7"
+-                               id="arrowGradient-left-xp0xljggz"
+                                x1="100%"
+                                y1="0%"
+                                x2="0%"
+                                y2="0%"
+                              >
+                              <filter
++                               id="glow-arrowGradient-left-ijoigt7x7"
+-                               id="glow-arrowGradient-left-xp0xljggz"
+                                x="-50%"
+                                y="-50%"
+                                width="200%"
+                                height="200%"
+                              >
+                            <motion.path d="M100 60 Q8..." stroke="url(#arrow..." strokeWidth="4" fill="none" ...>
+                              <path
+                                d="M100 60 Q80 50, 60 60 T20 60"
++                               stroke="url(#arrowGradient-left-ijoigt7x7)"
+-                               stroke="url(#arrowGradient-left-xp0xljggz)"
+                                strokeWidth="4"
+                                fill="none"
+                                strokeLinecap="round"
++                               filter="url(#glow-arrowGradient-left-ijoigt7x7)"
+-                               filter="url(#glow-arrowGradient-left-xp0xljggz)"
+                                opacity={0}
+                                pathLength={1}
+                                strokeDashoffset="0px"
+                                strokeDasharray="0px 1px"
+                                style={{}}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.path d="M30 50 L15 60" stroke="url(#arrow..." strokeWidth="4" fill="none" ...>
+                              <path
+                                d="M30 50 L15 60"
++                               stroke="url(#arrowGradient-left-ijoigt7x7)"
+-                               stroke="url(#arrowGradient-left-xp0xljggz)"
+                                strokeWidth="4"
+                                fill="none"
+                                strokeLinecap="round"
++                               filter="url(#glow-arrowGradient-left-ijoigt7x7)"
+-                               filter="url(#glow-arrowGradient-left-xp0xljggz)"
+                                opacity={0}
+                                pathLength={1}
+                                strokeDashoffset="0px"
+                                strokeDasharray="0px 1px"
+                                style={{}}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.path d="M30 70 L15 60" stroke="url(#arrow..." strokeWidth="4" fill="none" ...>
+                              <path
+                                d="M30 70 L15 60"
++                               stroke="url(#arrowGradient-left-ijoigt7x7)"
+-                               stroke="url(#arrowGradient-left-xp0xljggz)"
+                                strokeWidth="4"
+                                fill="none"
+                                strokeLinecap="round"
++                               filter="url(#glow-arrowGradient-left-ijoigt7x7)"
+-                               filter="url(#glow-arrowGradient-left-xp0xljggz)"
+                                opacity={0}
+                                pathLength={1}
+                                strokeDashoffset="0px"
+                                strokeDasharray="0px 1px"
+                                style={{}}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            ...
+                      ...
+                    <div className="relative m...">
+                      <AnimatedArrow direction="right" className="pointer-ev...">
+                        <div ref={{current:null}} className="hidden lg:...">
+                          <svg width="120" height="120" viewBox="0 0 120 120" className="text-blue-300">
+                            <defs>
+                              <linearGradient
++                               id="arrowGradient-right-620zn7pzi"
+-                               id="arrowGradient-right-b8hltpllb"
+                                x1="0%"
+                                y1="0%"
+                                x2="100%"
+                                y2="0%"
+                              >
+                              <filter
++                               id="glow-arrowGradient-right-620zn7pzi"
+-                               id="glow-arrowGradient-right-b8hltpllb"
+                                x="-50%"
+                                y="-50%"
+                                width="200%"
+                                height="200%"
+                              >
+                            <motion.path d="M20 60 Q40..." stroke="url(#arrow..." strokeWidth="4" fill="none" ...>
+                              <path
+                                d="M20 60 Q40 50, 60 60 T100 60"
++                               stroke="url(#arrowGradient-right-620zn7pzi)"
+-                               stroke="url(#arrowGradient-right-b8hltpllb)"
+                                strokeWidth="4"
+                                fill="none"
+                                strokeLinecap="round"
++                               filter="url(#glow-arrowGradient-right-620zn7pzi)"
+-                               filter="url(#glow-arrowGradient-right-b8hltpllb)"
+                                opacity={0}
+                                pathLength={1}
+                                strokeDashoffset="0px"
+                                strokeDasharray="0px 1px"
+                                style={{}}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.path d="M90 50 L10..." stroke="url(#arrow..." strokeWidth="4" fill="none" ...>
+                              <path
+                                d="M90 50 L105 60"
++                               stroke="url(#arrowGradient-right-620zn7pzi)"
+-                               stroke="url(#arrowGradient-right-b8hltpllb)"
+                                strokeWidth="4"
+                                fill="none"
+                                strokeLinecap="round"
++                               filter="url(#glow-arrowGradient-right-620zn7pzi)"
+-                               filter="url(#glow-arrowGradient-right-b8hltpllb)"
+                                opacity={0}
+                                pathLength={1}
+                                strokeDashoffset="0px"
+                                strokeDasharray="0px 1px"
+                                style={{}}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            <motion.path d="M90 70 L10..." stroke="url(#arrow..." strokeWidth="4" fill="none" ...>
+                              <path
+                                d="M90 70 L105 60"
++                               stroke="url(#arrowGradient-right-620zn7pzi)"
+-                               stroke="url(#arrowGradient-right-b8hltpllb)"
+                                strokeWidth="4"
+                                fill="none"
+                                strokeLinecap="round"
++                               filter="url(#glow-arrowGradient-right-620zn7pzi)"
+-                               filter="url(#glow-arrowGradient-right-b8hltpllb)"
+                                opacity={0}
+                                pathLength={1}
+                                strokeDashoffset="0px"
+                                strokeDasharray="0px 1px"
+                                style={{}}
+                                ref={function useMotionRef.useCallback}
+                              >
+                            ...
+                      ...
+                    ...
+                ...
+              ...
+        ...
+Call Stack
+19
+
+createConsoleError
+.next\static\chunks\76b7b_next_dist_client_a5b36125._.js (882:71)
+handleConsoleError
+.next\static\chunks\76b7b_next_dist_client_a5b36125._.js (1058:54)
+console.error
+.next\static\chunks\76b7b_next_dist_client_a5b36125._.js (1223:57)
+<unknown>
+.next\static\chunks\76b7b_next_dist_compiled_4da4b0c4._.js (5153:25)
+runWithFiberInDEV
+.next\static\chunks\76b7b_next_dist_compiled_4da4b0c4._.js (3073:74)
+emitPendingHydrationWarnings
+.next\static\chunks\76b7b_next_dist_compiled_4da4b0c4._.js (5152:13)
+completeWork
+.next\static\chunks\76b7b_next_dist_compiled_4da4b0c4._.js (8331:102)
+runWithFiberInDEV
+.next\static\chunks\76b7b_next_dist_compiled_4da4b0c4._.js (3073:131)
+completeUnitOfWork
+.next\static\chunks\76b7b_next_dist_compiled_4da4b0c4._.js (10308:23)
+performUnitOfWork
+.next\static\chunks\76b7b_next_dist_compiled_4da4b0c4._.js (10245:28)
+workLoopConcurrentByScheduler
+.next\static\chunks\76b7b_next_dist_compiled_4da4b0c4._.js (10239:58)
+renderRootConcurrent
+.next\static\chunks\76b7b_next_dist_compiled_4da4b0c4._.js (10221:71)
+performWorkOnRoot
+.next\static\chunks\76b7b_next_dist_compiled_4da4b0c4._.js (9853:176)
+performWorkOnRootViaSchedulerTask
+.next\static\chunks\76b7b_next_dist_compiled_4da4b0c4._.js (10826:9)
+MessagePort.performWorkUntilDeadline
+.next\static\chunks\76b7b_next_dist_compiled_4da4b0c4._.js (1982:64)
+linearGradient
+<anonymous> (0:0)
+AnimatedArrow
+.next\static\chunks\src_880e9bef._.js (708:358)
+WaterCompanyLanding
+.next\static\chunks\src_880e9bef._.js (1876:370)
+ClientPageRoot
+.next\static\chunks\76b7b_next_dist_d97f7641._.js (2061:50)

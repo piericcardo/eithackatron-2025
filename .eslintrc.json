@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "next/core-web-vitals"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": ["warn", {
+      "argsIgnorePattern": "^_",
+      "varsIgnorePattern": "^(actionTypes|props|Leaf|Zap)$",
+      "ignoreRestSiblings": true
+    }],
+    "react/no-unescaped-entities": "off"
+  }
+} 

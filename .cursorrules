@@ -1,0 +1,201 @@
+# Cursor Rules for AquaPure Water Quality Project
+
+## Project Context
+This is a Next.js 15 (App Router) project for AquaPure - a premium water company focused on eliminating microplastics and fluoride through reverse osmosis while maintaining essential minerals through remineralization. Water is stored in aluminum cans to prevent microplastic contamination. The site features a free water quality map for Varna, Bulgaria.
+
+## Core Principles
+
+### 1. Read Before Writing
+- ALWAYS read the entire file before making changes
+- Check for dependencies and imports that might break
+- Look for similar patterns in existing code
+- Verify the file structure and component hierarchy
+
+### 2. Think Before Acting
+- Consider how changes will affect other components
+- Check if similar functionality already exists elsewhere
+- Evaluate if your approach matches the existing code style
+- Ask: "Will this break anything?"
+
+### 3. Use The Most Efficient Approach
+- Leverage existing UI components from `src/components/ui/`
+- Use existing utilities and helpers
+- Don't duplicate code - create reusable components
+- Follow the established file structure
+
+### 4. Maintain Consistency
+- Follow existing naming conventions (PascalCase for components, camelCase for functions)
+- Match the existing code style and formatting
+- Keep Bulgarian language consistency throughout
+- Use the same icon library (lucide-react) for all icons
+
+## Technical Stack
+
+### Framework & Libraries
+- Next.js 15 with App Router
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- Shadcn/ui components
+- Framer Motion for animations
+- Leaflet for maps
+- Recharts for data visualization
+
+### Key Dependencies
+- `react-leaflet` - Interactive maps
+- `framer-motion` - Smooth animations
+- `lucide-react` - Icon system
+- `@radix-ui` - Accessible UI primitives
+- `recharts` - Charts and graphs
+
+## File Structure Rules
+
+### Pages (App Router)
+- Main landing: `src/app/page.tsx`
+- Map page: `src/app/map/page.tsx`
+- API routes: `src/app/api/[name]/route.ts`
+- New pages: Create in `src/app/[page-name]/page.tsx`
+
+### Components
+- UI primitives: `src/components/ui/`
+- Shared components: `src/components/`
+- Page-specific: Keep in page file or create in components folder
+
+### Data
+- Static data: JSON files in `src/app/`
+- Type definitions: Colocate with usage or in `src/types/`
+
+## Language & Content Rules
+
+### Language
+- ALL user-facing text must be in Bulgarian (Cyrillic)
+- Use formal tone ("Вие" form)
+- Technical terms can be in English if commonly used
+- HTML lang attribute should be "bg"
+
+### Brand Voice
+- Professional and trustworthy
+- Health-focused and scientific
+- Eco-conscious
+- Emphasize: reverse osmosis, fluoride-free, microplastic-free, remineralization, aluminum cans
+
+### Core Messages to Emphasize
+1. Reverse osmosis eliminates fluoride and microplastics
+2. Remineralization adds back essential minerals
+3. Aluminum cans prevent microplastic contamination
+4. Free water quality testing for all neighborhoods
+5. Health and purity focused
+
+## Component Guidelines
+
+### UI Components
+- Use existing shadcn/ui components from `src/components/ui/`
+- Don't create custom versions of existing components
+- Follow Radix UI patterns for accessibility
+- Always include proper TypeScript types
+
+### Styling
+- Use Tailwind CSS classes exclusively
+- Follow mobile-first responsive design
+- Color scheme: Blue tones (#0A7089, #1a365d, #2d4a77) for water theme
+- Use existing color variables when possible
+
+### Animations
+- Use `AnimatedComponent` wrapper for scroll animations
+- Keep animations subtle and performant
+- Default delay: 0.2-0.7s for stagger effects
+
+## Data Management
+
+### Neighborhoods Data
+- Stored in `src/app/varnaNeighborhoodsData.json`
+- Accessed via API route `/api/neighborhoods`
+- Type definition in `src/app/mockData.ts`
+- Each neighborhood has: name, coordinates, value (0-10), description, color
+
+### Adding New Neighborhoods
+- Follow existing JSON structure
+- Include all required fields
+- Value should be 0-10 (water quality scale)
+- Coordinates must be valid lat/lng arrays
+
+## Performance Rules
+
+1. **Images**: Always use Next.js `<Image>` component
+2. **Dynamic Imports**: Use for heavy libraries (like Leaflet)
+3. **Client Components**: Mark with 'use client' only when needed
+4. **Code Splitting**: Keep page components reasonably sized
+
+## Accessibility Rules
+
+1. Use semantic HTML elements
+2. Include alt text for all images
+3. Ensure keyboard navigation works
+4. Use ARIA labels where appropriate
+5. Maintain color contrast ratios
+
+## Testing Checklist Before Committing
+
+- [ ] Code runs without errors
+- [ ] No console warnings
+- [ ] Responsive on mobile, tablet, desktop
+- [ ] All links work (no '#' placeholders)
+- [ ] Bulgarian language is correct
+- [ ] Images load properly
+- [ ] Animations are smooth
+- [ ] Map functionality works (if changed)
+- [ ] No duplicate imports
+- [ ] TypeScript types are correct
+
+## Common Pitfalls to Avoid
+
+1. ❌ Don't hardcode '#' for links - create proper routes or disable buttons
+2. ❌ Don't mix English and Bulgarian text
+3. ❌ Don't create duplicate UI components
+4. ❌ Don't ignore TypeScript errors
+5. ❌ Don't forget to mark client components with 'use client'
+6. ❌ Don't import Leaflet on server side (use dynamic imports)
+7. ❌ Don't break existing API routes structure
+8. ❌ Don't remove existing functionality without replacement
+
+## Git Workflow
+
+1. Review changes carefully before committing
+2. Write clear commit messages in English
+3. Test locally before pushing
+4. Keep commits focused and atomic
+
+## When Adding New Features
+
+1. Check if similar feature exists
+2. Plan the component structure
+3. Create types first
+4. Build component with existing UI elements
+5. Add to navigation if needed
+6. Test thoroughly
+7. Update documentation if necessary
+
+## Legal Pages Requirements
+
+When creating legal pages (Privacy Policy, TOS, etc.):
+- Follow GDPR requirements (EU audience)
+- Include company information
+- Be clear and specific about data usage
+- Use proper legal terminology in Bulgarian
+- Include last updated date
+- Make them easily accessible from footer
+
+## E-commerce Considerations (Future)
+
+When implementing shop functionality:
+- Use secure payment gateway
+- Implement proper cart system
+- Add product inventory management
+- Include order tracking
+- Set up email notifications
+- Ensure legal compliance for online sales in Bulgaria
+
+---
+
+Remember: Quality over speed. It's better to take time to understand the code than to rush and break things.
+
