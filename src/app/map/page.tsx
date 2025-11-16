@@ -138,14 +138,13 @@ export default function MapPage() {
   const [dataLayer, setDataLayer] = useState<'all' | 'good-only' | 'poor-only'>('all');
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Load theme preference from localStorage
+  // Load theme preference from localStorage (defaults to light mode)
   useEffect(() => {
     const savedTheme = localStorage.getItem('aquapure-map-theme');
     if (savedTheme === 'dark') {
       setIsDarkMode(true);
-    } else if (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setIsDarkMode(true);
     }
+    // Default to light mode - no system preference check
   }, []);
 
   // Save theme preference and apply to document
@@ -427,23 +426,23 @@ ${waterData.benefits.map(b => `• ${b.text}`).join('\n')}
       <header className={`border-b shadow-sm z-[1001] flex-shrink-0 transition-colors duration-300 ${
         isDarkMode ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-200'
       }`}>
-        <div className="container mx-auto max-w-7xl px-4 py-3">
-          <div className="flex items-center justify-between gap-4 flex-wrap">
+        <div className="container mx-auto max-w-7xl px-3 sm:px-4 py-3 sm:py-3">
+          <div className="flex items-center justify-between gap-2 sm:gap-4 flex-wrap">
             <button
               onClick={() => router.push('/')}
-              className={`flex items-center gap-2 transition-colors cursor-pointer ${
+              className={`flex items-center gap-2 transition-colors cursor-pointer min-h-[44px] px-2 -ml-2 ${
                 isDarkMode ? 'text-blue-400 hover:text-blue-300' : 'text-blue-900 hover:text-blue-600'
               }`}
               aria-label="Go to home page"
             >
-              <Home className="h-5 w-5" />
-              <span className="font-semibold hidden sm:inline">AquaPure</span>
+              <Home className="h-6 w-6 sm:h-5 sm:w-5" />
+              <span className="font-semibold text-base sm:text-sm">AquaPure</span>
             </button>
 
-            {/* Dark Mode Toggle */}
+            {/* Dark Mode Toggle - Larger for mobile */}
             <button
               onClick={() => setIsDarkMode(!isDarkMode)}
-              className={`p-2 border rounded-lg transition-all duration-300 ${
+              className={`p-3 sm:p-2 border rounded-lg transition-all duration-300 min-h-[44px] min-w-[44px] flex items-center justify-center ${
                 isDarkMode 
                   ? 'border-gray-600 bg-gray-800 hover:bg-gray-700 text-yellow-400' 
                   : 'border-gray-300 bg-white hover:bg-gray-50 text-gray-700'
@@ -451,62 +450,62 @@ ${waterData.benefits.map(b => `• ${b.text}`).join('\n')}
               title={isDarkMode ? 'Светъл режим' : 'Тъмен режим'}
               aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
             >
-              {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+              {isDarkMode ? <Sun className="h-5 w-5 sm:h-4 sm:w-4" /> : <Moon className="h-5 w-5 sm:h-4 sm:w-4" />}
             </button>
 
-            {/* Search Bar */}
-            <div className="flex-1 max-w-md min-w-0">
+            {/* Search Bar - Full width on mobile */}
+            <div className="w-full sm:flex-1 sm:max-w-md order-last sm:order-none">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 sm:h-4 sm:w-4 text-gray-400 pointer-events-none" />
                 <input
                   type="text"
-                  placeholder="Търси..."
+                  placeholder="Търси квартал..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className={`w-full pl-10 pr-10 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm transition-colors ${
+                  className={`w-full pl-10 pr-12 py-3 sm:py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base sm:text-sm transition-colors ${
                     isDarkMode 
                       ? 'bg-gray-800 border-gray-600 text-gray-100 placeholder-gray-400' 
-                      : 'bg-white border-gray-300 text-gray-900'
+                      : 'bg-white border-gray-300 text-gray-900 placeholder-gray-500'
                   }`}
                 />
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery('')}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 p-1 min-h-[36px] min-w-[36px] flex items-center justify-center"
                   >
-                    <X className="h-4 w-4" />
+                    <X className="h-5 w-5 sm:h-4 sm:w-4" />
                   </button>
                 )}
               </div>
             </div>
 
-            {/* Filter Dropdown */}
+            {/* Filter Dropdown - Better mobile touch target */}
             <div className="relative">
               <button
                 onClick={() => setIsFilterOpen(!isFilterOpen)}
-                className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 border rounded-lg transition-colors text-sm font-medium ${
+                className={`flex items-center gap-2 px-4 py-3 sm:py-2 border rounded-lg transition-colors text-base sm:text-sm font-medium min-h-[44px] ${
                   isDarkMode 
                     ? 'border-gray-600 bg-gray-800 hover:bg-gray-700 text-gray-200' 
                     : 'border-gray-300 bg-white hover:bg-gray-50 text-gray-900'
                 }`}
                 aria-label="Filter neighborhoods"
               >
-                <Filter className="h-4 w-4" />
-                <span className="hidden sm:inline">
+                <Filter className="h-5 w-5 sm:h-4 sm:w-4" />
+                <span>
                   {filterQuality === 'all' ? 'Всички' : 
                    filterQuality === 'good' ? 'Добро' : 
                    filterQuality === 'medium' ? 'Средно' : 'Слабо'}
                 </span>
-                <ChevronDown className="h-4 w-4" />
+                <ChevronDown className="h-5 w-5 sm:h-4 sm:w-4" />
               </button>
               
               {isFilterOpen && (
-                <div className={`absolute right-0 mt-2 w-48 border rounded-lg shadow-lg z-[1002] ${
+                <div className={`absolute right-0 mt-2 w-56 sm:w-48 border rounded-lg shadow-lg z-[1002] ${
                   isDarkMode ? 'bg-gray-800 border-gray-600' : 'bg-white border-gray-200'
                 }`}>
                   <button
                     onClick={() => { setFilterQuality('all'); setIsFilterOpen(false); }}
-                    className={`w-full text-left px-4 py-2 transition-colors ${
+                    className={`w-full text-left px-4 py-3 sm:py-2 transition-colors text-base sm:text-sm min-h-[44px] sm:min-h-0 ${
                       isDarkMode 
                         ? `hover:bg-gray-700 ${filterQuality === 'all' ? 'bg-blue-900 text-blue-300' : 'text-gray-200'}` 
                         : `hover:bg-gray-50 ${filterQuality === 'all' ? 'bg-blue-50 text-blue-700' : 'text-gray-900'}`
@@ -516,7 +515,7 @@ ${waterData.benefits.map(b => `• ${b.text}`).join('\n')}
                   </button>
                   <button
                     onClick={() => { setFilterQuality('good'); setIsFilterOpen(false); }}
-                    className={`w-full text-left px-4 py-2 transition-colors ${
+                    className={`w-full text-left px-4 py-3 sm:py-2 transition-colors text-base sm:text-sm min-h-[44px] sm:min-h-0 ${
                       isDarkMode 
                         ? `hover:bg-gray-700 ${filterQuality === 'good' ? 'bg-blue-900 text-blue-300' : 'text-gray-200'}` 
                         : `hover:bg-gray-50 ${filterQuality === 'good' ? 'bg-blue-50 text-blue-700' : 'text-gray-900'}`
@@ -526,7 +525,7 @@ ${waterData.benefits.map(b => `• ${b.text}`).join('\n')}
                   </button>
                   <button
                     onClick={() => { setFilterQuality('medium'); setIsFilterOpen(false); }}
-                    className={`w-full text-left px-4 py-2 transition-colors ${
+                    className={`w-full text-left px-4 py-3 sm:py-2 transition-colors text-base sm:text-sm min-h-[44px] sm:min-h-0 ${
                       isDarkMode 
                         ? `hover:bg-gray-700 ${filterQuality === 'medium' ? 'bg-blue-900 text-blue-300' : 'text-gray-200'}` 
                         : `hover:bg-gray-50 ${filterQuality === 'medium' ? 'bg-blue-50 text-blue-700' : 'text-gray-900'}`
@@ -536,7 +535,7 @@ ${waterData.benefits.map(b => `• ${b.text}`).join('\n')}
                   </button>
                   <button
                     onClick={() => { setFilterQuality('poor'); setIsFilterOpen(false); }}
-                    className={`w-full text-left px-4 py-2 rounded-b-lg transition-colors ${
+                    className={`w-full text-left px-4 py-3 sm:py-2 rounded-b-lg transition-colors text-base sm:text-sm min-h-[44px] sm:min-h-0 ${
                       isDarkMode 
                         ? `hover:bg-gray-700 ${filterQuality === 'poor' ? 'bg-blue-900 text-blue-300' : 'text-gray-200'}` 
                         : `hover:bg-gray-50 ${filterQuality === 'poor' ? 'bg-blue-50 text-blue-700' : 'text-gray-900'}`
@@ -567,10 +566,10 @@ ${waterData.benefits.map(b => `• ${b.text}`).join('\n')}
               </select>
             </div>
 
-            {/* Reset Button */}
+            {/* Reset Button - Larger for mobile */}
             <button
               onClick={handleResetView}
-              className={`p-2 border rounded-lg transition-colors ${
+              className={`p-3 sm:p-2 border rounded-lg transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center ${
                 isDarkMode 
                   ? 'border-gray-600 bg-gray-800 hover:bg-gray-700 text-gray-200' 
                   : 'border-gray-300 bg-white hover:bg-gray-50 text-gray-900'
@@ -578,13 +577,15 @@ ${waterData.benefits.map(b => `• ${b.text}`).join('\n')}
               title="Нулиране"
               aria-label="Reset view"
             >
-              <RotateCcw className="h-4 w-4" />
+              <RotateCcw className="h-5 w-5 sm:h-4 sm:w-4" />
             </button>
           </div>
 
           {/* Results count */}
           {(searchQuery || filterQuality !== 'all') && (
-            <div className="mt-2 text-sm text-gray-600">
+            <div className={`mt-2 text-sm ${
+              isDarkMode ? 'text-gray-400' : 'text-gray-600'
+            }`}>
               Показани {filteredNeighborhoods.length} от {neighborhoods.length} квартала
             </div>
           )}
@@ -648,7 +649,7 @@ ${waterData.benefits.map(b => `• ${b.text}`).join('\n')}
             positions={neighborhood.coordinates as LatLngExpression[]}
             pathOptions={{
               color: getNeighborhoodColor(neighborhood),
-              fillOpacity: 0.5,
+              fillOpacity: 0.35,
               weight: 2,
             }}
             eventHandlers={{
@@ -854,7 +855,7 @@ ${waterData.benefits.map(b => `• ${b.text}`).join('\n')}
           fixed sm:absolute 
           bottom-0 sm:top-0 
           left-0 sm:left-auto right-0 
-          h-[85vh] sm:h-full 
+          h-[80vh] sm:h-full 
           w-full sm:w-[90%] md:w-[70%] lg:w-96 
           shadow-2xl z-[1002] overflow-y-auto
           transform transition-transform duration-300 ease-in-out
@@ -863,24 +864,30 @@ ${waterData.benefits.map(b => `• ${b.text}`).join('\n')}
           ${isPanelOpen ? 'translate-y-0 sm:translate-y-0 sm:translate-x-0' : 'translate-y-full sm:translate-y-0 sm:translate-x-full'}
         `}
       >
-        {/* Mobile Drag Handle */}
-        <div className={`sm:hidden sticky top-0 z-10 pt-3 pb-2 flex justify-center ${
-          isDarkMode ? 'bg-gray-900' : 'bg-gray-50'
-        }`}>
-          <div className={`w-12 h-1.5 rounded-full ${
+        {/* Mobile Drag Handle - Tappable area */}
+        <div 
+          onClick={() => {
+            setIsPanelOpen(false);
+            setTimeout(() => setSelectedNeighborhood(null), 300);
+          }}
+          className={`sm:hidden sticky top-0 z-10 pt-4 pb-3 flex justify-center cursor-pointer active:bg-opacity-90 ${
+            isDarkMode ? 'bg-gray-900' : 'bg-gray-50'
+          }`}
+        >
+          <div className={`w-16 h-1.5 rounded-full ${
             isDarkMode ? 'bg-gray-700' : 'bg-gray-300'
           }`} />
         </div>
 
         {selectedNeighborhood && (
-          <div className="p-4 sm:p-6">
-            <div className="flex justify-between items-start mb-6">
+          <div className="p-5 sm:p-6">
+            <div className="flex justify-between items-start mb-6 gap-3">
               <button
                 onClick={() => {
                   setIsPanelOpen(false);
                   setTimeout(() => setSelectedNeighborhood(null), 300);
                 }}
-                className={`rounded-full p-2 flex-shrink-0 transition-colors ${
+                className={`rounded-full p-3 sm:p-2 flex-shrink-0 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center ${
                   isDarkMode 
                     ? 'bg-gray-800 hover:bg-gray-700' 
                     : 'bg-gray-200 hover:bg-gray-300'
@@ -889,8 +896,8 @@ ${waterData.benefits.map(b => `• ${b.text}`).join('\n')}
                 <X className={`w-6 h-6 ${isDarkMode ? 'text-gray-300' : 'text-[#0A7089]'}`} />
               </button>
               
-              <div className="flex-1 mx-4">
-                <h2 className={`text-2xl font-bold ${
+              <div className="flex-1 mx-2 sm:mx-4">
+                <h2 className={`text-xl sm:text-2xl font-bold ${
                   isDarkMode ? 'text-blue-400' : 'text-[#1a365d]'
                 }`}>{selectedNeighborhood}</h2>
               </div>
@@ -898,7 +905,7 @@ ${waterData.benefits.map(b => `• ${b.text}`).join('\n')}
               <div className="flex gap-2 flex-shrink-0">
                 <button
                   onClick={handleShareReport}
-                  className={`rounded-lg p-2 transition-colors ${
+                  className={`rounded-lg p-3 sm:p-2 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center ${
                     isDarkMode 
                       ? 'bg-blue-900 hover:bg-blue-800 text-blue-300' 
                       : 'bg-blue-100 hover:bg-blue-200 text-blue-700'
@@ -910,7 +917,7 @@ ${waterData.benefits.map(b => `• ${b.text}`).join('\n')}
                 </button>
                 <button
                   onClick={handleDownloadReport}
-                  className={`rounded-lg p-2 transition-colors ${
+                  className={`rounded-lg p-3 sm:p-2 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center ${
                     isDarkMode 
                       ? 'bg-green-900 hover:bg-green-800 text-green-300' 
                       : 'bg-green-100 hover:bg-green-200 text-green-700'

@@ -323,13 +323,18 @@ export default function WaterCompanyLanding() {
                 {/* Image */}
                 <AnimatedComponent delay={0.4} direction="right">
                   <div className="relative">
-                    <div className="aspect-square bg-gradient-to-br from-red-50 to-blue-50 rounded-2xl shadow-2xl flex items-center justify-center p-8">
-                      <div className="text-center">
-                        <div className="text-6xl mb-4">🔬</div>
-                        <p className="text-gray-600 font-medium">Диаграма на замърсяване с микропластмаси</p>
-                        <p className="text-sm text-gray-500 mt-2">[Placeholder - добави изображение]</p>
-                      </div>
+                    <div className="aspect-square bg-gradient-to-br from-red-50 to-blue-50 rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center p-4">
+                      <Image
+                        src="/43591_2022_26_Fig1_HTML.png"
+                        alt="Диаграма на замърсяване с микропластмаси"
+                        width={1200}
+                        height={800}
+                        quality={95}
+                        className="w-full h-auto object-contain"
+                        priority
+                      />
                     </div>
+                    <p className="text-center text-sm text-gray-600 mt-3 font-medium">Диаграма на замърсяване с микропластмаси</p>
                   </div>
                 </AnimatedComponent>
               </div>
@@ -344,13 +349,24 @@ export default function WaterCompanyLanding() {
                 {/* Image */}
                 <AnimatedComponent delay={0.2} direction="left" className="lg:order-1">
                   <div className="relative">
-                    <div className="aspect-square bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl shadow-2xl flex items-center justify-center p-8">
-                      <div className="text-center">
-                        <div className="text-6xl mb-4">⚛️</div>
-                        <p className="text-gray-600 font-medium">Химична структура на флуорида</p>
-                        <p className="text-sm text-gray-500 mt-2">[Placeholder - добави изображение]</p>
-                      </div>
+                    <div className="aspect-square bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center p-4">
+                      <Image
+                        src="/unnamed.jpg"
+                        alt="Химична структура на флуорида"
+                        width={3200}
+                        height={3200}
+                        quality={100}
+                        unoptimized
+                        className="w-full h-full object-contain"
+                        style={{
+                          imageRendering: '-webkit-optimize-contrast',
+                          WebkitFontSmoothing: 'antialiased',
+                          transform: 'translateZ(0)',
+                          willChange: 'transform'
+                        }}
+                      />
                     </div>
+                    <p className="text-center text-sm text-gray-600 mt-3 font-medium">Химична структура на флуорида</p>
                   </div>
                 </AnimatedComponent>
 
@@ -467,13 +483,24 @@ export default function WaterCompanyLanding() {
                 {/* Image */}
                 <AnimatedComponent delay={0.4} direction="right">
                   <div className="relative">
-                    <div className="aspect-square bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl shadow-2xl flex items-center justify-center p-8">
-                      <div className="text-center">
-                        <div className="text-6xl mb-4">📊</div>
-                        <p className="text-gray-600 font-medium">Диаграма на минералните ползи</p>
-                        <p className="text-sm text-gray-500 mt-2">[Placeholder - добави изображение]</p>
-                      </div>
+                    <div className="aspect-square bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center p-4">
+                      <Image
+                        src="/Magnesium_is_an_important_mineral.jpg"
+                        alt="Диаграма на минералните ползи"
+                        width={3200}
+                        height={3200}
+                        quality={100}
+                        unoptimized
+                        className="w-full h-full object-contain"
+                        style={{
+                          imageRendering: '-webkit-optimize-contrast',
+                          WebkitFontSmoothing: 'antialiased',
+                          transform: 'translateZ(0)',
+                          willChange: 'transform'
+                        }}
+                      />
                     </div>
+                    <p className="text-center text-sm text-gray-600 mt-3 font-medium">Диаграма на минералните ползи</p>
                   </div>
                 </AnimatedComponent>
               </div>
@@ -488,20 +515,20 @@ export default function WaterCompanyLanding() {
                 
                 <div className="space-y-8 max-w-4xl mx-auto">
                   {/* Problem Solution 1 */}
-                  <div className="flex items-center gap-4 bg-white/60 rounded-xl p-6 shadow-sm">
+                  <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 bg-white/60 rounded-xl p-6 shadow-sm">
                     <div className="flex-1">
-                      <p className="text-lg font-semibold text-red-700">
+                      <p className="text-base md:text-lg font-semibold text-red-700">
                         <span className="text-2xl mr-2">⚠️</span>
                         Микропластмаси от пластмасови бутилки
                       </p>
                     </div>
-                    <div className="flex-shrink-0">
-                      <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex-shrink-0 self-center">
+                      <svg className="w-8 h-8 md:w-8 md:h-8 text-green-600 rotate-90 md:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <p className="text-lg font-semibold text-green-700">
+                      <p className="text-base md:text-lg font-semibold text-green-700">
                         <span className="text-2xl mr-2">✓</span>
                         Алуминиеви кутии - 100% без пластмаса
                       </p>
@@ -509,20 +536,20 @@ export default function WaterCompanyLanding() {
                   </div>
 
                   {/* Problem Solution 2 */}
-                  <div className="flex items-center gap-4 bg-white/60 rounded-xl p-6 shadow-sm">
+                  <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 bg-white/60 rounded-xl p-6 shadow-sm">
                     <div className="flex-1">
-                      <p className="text-lg font-semibold text-red-700">
+                      <p className="text-base md:text-lg font-semibold text-red-700">
                         <span className="text-2xl mr-2">⚠️</span>
                         Флуорид и химикали в обикновената вода
                       </p>
                     </div>
-                    <div className="flex-shrink-0">
-                      <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex-shrink-0 self-center">
+                      <svg className="w-8 h-8 md:w-8 md:h-8 text-green-600 rotate-90 md:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <p className="text-lg font-semibold text-green-700">
+                      <p className="text-base md:text-lg font-semibold text-green-700">
                         <span className="text-2xl mr-2">✓</span>
                         Обратна осмоза - 99.9% премахване
                       </p>
@@ -530,20 +557,20 @@ export default function WaterCompanyLanding() {
                   </div>
 
                   {/* Problem Solution 3 */}
-                  <div className="flex items-center gap-4 bg-white/60 rounded-xl p-6 shadow-sm">
+                  <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 bg-white/60 rounded-xl p-6 shadow-sm">
                     <div className="flex-1">
-                      <p className="text-lg font-semibold text-red-700">
+                      <p className="text-base md:text-lg font-semibold text-red-700">
                         <span className="text-2xl mr-2">⚠️</span>
                         Липса на essential минерали след филтриране
                       </p>
                     </div>
-                    <div className="flex-shrink-0">
-                      <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex-shrink-0 self-center">
+                      <svg className="w-8 h-8 md:w-8 md:h-8 text-green-600 rotate-90 md:rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <p className="text-lg font-semibold text-green-700">
+                      <p className="text-base md:text-lg font-semibold text-green-700">
                         <span className="text-2xl mr-2">✓</span>
                         Реминерализация - добавяме полезни минерали
                       </p>
