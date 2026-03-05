@@ -1,7 +1,7 @@
 # Cursor Rules for AquaPure Water Quality Project
 
 ## Project Context
-This is a Next.js 15 (App Router) project for AquaPure - a premium water company focused on eliminating microplastics and fluoride through reverse osmosis while maintaining essential minerals through remineralization. Water is stored in aluminum cans to prevent microplastic contamination. The site features a free water quality map for Varna, Bulgaria.
+This is a Next.js 15 (App Router) project for AquaPure - a premium water company focused on eliminating microplastics and fluoride through reverse osmosis while maintaining essential minerals through remineralization. Water is stored in aluminum cans to prevent microplastic contamination. The site features a free water quality map for Sofia, Bulgaria.
 
 ## Core Principles
 
@@ -108,7 +108,7 @@ This is a Next.js 15 (App Router) project for AquaPure - a premium water company
 ## Data Management
 
 ### Neighborhoods Data
-- Stored in `src/app/varnaNeighborhoodsData.json`
+- Stored in `src/app/sofiaNeighborhoodsData.json`
 - Accessed via API route `/api/neighborhoods`
 - Type definition in `src/app/mockData.ts`
 - Each neighborhood has: name, coordinates, value (0-10), description, color

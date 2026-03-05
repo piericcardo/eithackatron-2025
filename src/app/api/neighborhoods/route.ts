@@ -3,7 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import type { Neighborhood } from '../../mockData';
 
-const dataFilePath = path.join(process.cwd(), 'src/app/varnaNeighborhoodsData.json');
+const dataFilePath = path.join(process.cwd(), 'src/app/sofiaNeighborhoodsData.json');
 
 export async function GET() {
   try {

@@ -247,7 +247,7 @@ export default function MapPage() {
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, [isPanelOpen]);
 
-  const center: LatLngTuple = [43.2141, 27.9147];
+  const center: LatLngTuple = [42.6977, 23.3219];
 
   const getNeighborhoodColor = (neighborhood: Neighborhood) => {
     if (selectedNeighborhood === neighborhood.name) {
