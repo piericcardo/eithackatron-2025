@@ -626,7 +626,7 @@ ${waterData.benefits.map(b => `• ${b.text}`).join('\n')}
       <MapContainer
           key={mapKey}
         center={center}
-        zoom={13}
+        zoom={12}
         scrollWheelZoom={true}
           zoomAnimation={true}
           fadeAnimation={true}

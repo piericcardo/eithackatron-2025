@@ -131,15 +131,14 @@ export default function WaterCompanyLanding() {
                 <div className="flex flex-col justify-center space-y-6">
                   <div className="space-y-4">
                     <Badge className="bg-blue-600 text-white hover:bg-blue-700 text-sm px-4 py-1">
-                      Технология на Обратна Осмоза
+                      Технология с Активирана Алумина
                     </Badge>
                     <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-blue-900">
                       Вода без Флуорид и Микропластмаси
                     </h1>
                     <p className="max-w-[600px] text-gray-700 md:text-xl leading-relaxed">
-                      Премиум вода, пречистена чрез <strong>обратна осмоза</strong> за пълно елиминиране на флуорид и микропластмаси. 
-                      <strong> Реминерализирана</strong> за запазване на essential минерали. Съхранена в <strong>алуминиеви кутии</strong> 
-                      за предотвратяване на замърсяване с пластмаса.
+                      Премиум вода, филтрирана с <strong>активирана алумина</strong> за ефективно намаляване на флуорид. 
+                      Съхранена в <strong>стъклени бутилки</strong> за минимален риск от микропластмаси и чист вкус във всяка глътка.
                     </p>
                   </div>
 
@@ -160,7 +159,7 @@ export default function WaterCompanyLanding() {
                       </div>
                       <div>
                         <p className="font-semibold text-sm text-gray-900">Без Микропластмаси</p>
-                        <p className="text-xs text-gray-600">Алуминиеви кутии</p>
+                        <p className="text-xs text-gray-600">Стъклени бутилки</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
@@ -168,8 +167,8 @@ export default function WaterCompanyLanding() {
                         <Beaker className="h-4 w-4 text-purple-700" />
                       </div>
                       <div>
-                        <p className="font-semibold text-sm text-gray-900">Реминерализация</p>
-                        <p className="text-xs text-gray-600">Essencial минерали</p>
+                        <p className="font-semibold text-sm text-gray-900">Минерален Баланс</p>
+                        <p className="text-xs text-gray-600">Естествен състав</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
@@ -177,8 +176,8 @@ export default function WaterCompanyLanding() {
                         <Waves className="h-4 w-4 text-cyan-700" />
                       </div>
                       <div>
-                        <p className="font-semibold text-sm text-gray-900">Обратна Осмоза</p>
-                        <p className="text-xs text-gray-600">Научно доказано</p>
+                        <p className="font-semibold text-sm text-gray-900">Активирана Алумина</p>
+                        <p className="text-xs text-gray-600">Селективна филтрация</p>
                       </div>
                     </div>
                   </div>
@@ -228,6 +227,7 @@ export default function WaterCompanyLanding() {
                     width="500"
                     height="600"
                     alt="Премиум бутилки с вода"
+                    unoptimized
                     className="mx-auto aspect-[5/6] overflow-hidden rounded-xl object-cover"
                   />
                 </div>
@@ -304,7 +304,7 @@ export default function WaterCompanyLanding() {
                         <ul className="space-y-2 text-gray-700">
                           <li className="flex items-start gap-2">
                             <span className="text-green-500 mt-1">✓</span>
-                            <span>Алуминиевите кутии са 100% херметични и не отделят вредни частици</span>
+                            <span>Стъклените бутилки са химически инертни и не отделят нежелани частици във водата</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <span className="text-green-500 mt-1">✓</span>
@@ -312,7 +312,7 @@ export default function WaterCompanyLanding() {
                           </li>
                           <li className="flex items-start gap-2">
                             <span className="text-green-500 mt-1">✓</span>
-                            <span>Еко-съобразно решение - алуминият се рециклира безкрайно</span>
+                            <span>Еко-съобразно решение - стъклото е многократно използваемо и напълно рециклируемо</span>
                           </li>
                         </ul>
                       </div>
@@ -405,7 +405,7 @@ export default function WaterCompanyLanding() {
                         <ul className="space-y-2 text-gray-700">
                           <li className="flex items-start gap-2">
                             <span className="text-green-500 mt-1">✓</span>
-                            <span>Обратната осмоза премахва 99.9% от флуорида от водата</span>
+                            <span>Филтрацията с активирана алумина е специализирана за понижаване на флуорида</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <span className="text-green-500 mt-1">✓</span>
@@ -434,45 +434,45 @@ export default function WaterCompanyLanding() {
                   <div className="space-y-6">
                     <div>
                       <h3 className="text-3xl font-bold text-blue-900 mb-6">
-                        💎 Essential Минерали
+                        💎 Минерален Баланс
                       </h3>
                       
                       <div className="mb-6">
                         <h4 className="text-xl font-semibold text-red-700 mb-3">
-                          Опасностите от Вода без Минерали
+                          Защо Минералният Баланс е Важен
                         </h4>
                         <ul className="space-y-2 text-gray-700">
                           <li className="flex items-start gap-2">
                             <span className="text-red-500 mt-1">•</span>
-                            <span>Дестилираната вода може да извлича минерали от тялото</span>
+                            <span>Водата с небалансиран състав може да не осигурява оптимална ежедневна хидратация</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <span className="text-red-500 mt-1">•</span>
-                            <span>Липсата на калций и магнезий влияе негативно на костите и сърцето</span>
+                            <span>Недостатъчните нива на калций и магнезий влияят на костите и сърдечно-съдовата система</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <span className="text-red-500 mt-1">•</span>
-                            <span>Минералният дефицит води до умора, мускулни крампи и слаб имунитет</span>
+                            <span>Дългосрочният минерален дефицит може да доведе до умора и мускулен дискомфорт</span>
                           </li>
                         </ul>
                       </div>
 
                       <div>
                         <h4 className="text-xl font-semibold text-green-700 mb-3">
-                          Защо Реминерализацията е Важна
+                          Как Осигуряваме Качествена Вода
                         </h4>
                         <ul className="space-y-2 text-gray-700">
                           <li className="flex items-start gap-2">
                             <span className="text-green-500 mt-1">✓</span>
-                            <span>Добавяме калций, магнезий и калий след пречистването</span>
+                            <span>Използваме активирана алумина за целенасочено намаляване на флуорида</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <span className="text-green-500 mt-1">✓</span>
-                            <span>Подкрепя здравето на костите, зъбите и сърдечно-съдовата система</span>
+                            <span>Съхраняваме водата в стъклени бутилки за чист вкус и стабилно качество</span>
                           </li>
                           <li className="flex items-start gap-2">
                             <span className="text-green-500 mt-1">✓</span>
-                            <span>Оптимална хидратация с балансиран минерален състав</span>
+                            <span>Фокус върху безопасна и постоянна хидратация всеки ден</span>
                           </li>
                         </ul>
                       </div>
@@ -530,7 +530,7 @@ export default function WaterCompanyLanding() {
                     <div className="flex-1">
                       <p className="text-base md:text-lg font-semibold text-green-700">
                         <span className="text-2xl mr-2">✓</span>
-                        Алуминиеви кутии - 100% без пластмаса
+                        Стъклени бутилки - без контакт с пластмаса
                       </p>
                     </div>
                   </div>
@@ -551,7 +551,7 @@ export default function WaterCompanyLanding() {
                     <div className="flex-1">
                       <p className="text-base md:text-lg font-semibold text-green-700">
                         <span className="text-2xl mr-2">✓</span>
-                        Обратна осмоза - 99.9% премахване
+                        Активирана алумина - селективно намаляване на флуорида
                       </p>
                     </div>
                   </div>
@@ -561,7 +561,7 @@ export default function WaterCompanyLanding() {
                     <div className="flex-1">
                       <p className="text-base md:text-lg font-semibold text-red-700">
                         <span className="text-2xl mr-2">⚠️</span>
-                        Липса на essential минерали след филтриране
+                        Непостоянно качество при стандартна филтрация
                       </p>
                     </div>
                     <div className="flex-shrink-0 self-center">
@@ -572,7 +572,7 @@ export default function WaterCompanyLanding() {
                     <div className="flex-1">
                       <p className="text-base md:text-lg font-semibold text-green-700">
                         <span className="text-2xl mr-2">✓</span>
-                        Реминерализация - добавяме полезни минерали
+                        Контролиран процес за стабилен минерален баланс
                       </p>
                     </div>
                   </div>
@@ -688,6 +688,7 @@ export default function WaterCompanyLanding() {
                     src="/bottles.png"
                     alt="Колекция от премиум бутилки с вода"
                     fill
+                    unoptimized
                     className="object-contain"
                     priority
                   />
